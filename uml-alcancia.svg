@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="640" viewBox="0 0 1240 640" font-family="'DejaVu Sans Mono','Consolas',monospace">
+  <rect width="1240" height="640" fill="#ffffff"/>
+  <text x="620" y="38" text-anchor="middle" font-family="'DejaVu Sans','Arial',sans-serif" font-size="24" font-weight="700" fill="#1b3a5f">Diagrama de clases UML · Encapsulamiento (Alcancía)</text>
+
+  <!-- ===== Alcancia ===== -->
+  <g stroke="#1b3a5f" stroke-width="2">
+    <rect x="60" y="70" width="520" height="52" fill="#1b3a5f"/>
+    <rect x="60" y="122" width="520" height="76" fill="#fff"/>
+    <rect x="60" y="198" width="520" height="198" fill="#fff"/>
+  </g>
+  <text x="320" y="104" text-anchor="middle" font-size="22" font-weight="700" fill="#fff">Alcancia</text>
+  <g font-size="15" fill="#1b2a3a">
+    <text x="78" y="150">- dinero: number</text>
+    <text x="78" y="178">- movimientos: Object[]</text>
+
+    <text x="78" y="226">+ guardar(cantidad: number): void</text>
+    <text x="78" y="254">+ sacar(cantidad: number): void</text>
+    <text x="78" y="282">+ «get» saldo(): number</text>
+    <text x="78" y="310">+ «get» historial(): Object[]</text>
+    <text x="78" y="338">- validar(cantidad: number): void</text>
+    <text x="78" y="366">- registrar(tipo: string, cantidad: number): void</text>
+  </g>
+
+  <!-- ===== AlcanciaInsegura ===== -->
+  <g stroke="#b3261e" stroke-width="2">
+    <rect x="660" y="70" width="520" height="64" fill="#b3261e"/>
+    <rect x="660" y="134" width="520" height="48" fill="#fff"/>
+    <rect x="660" y="182" width="520" height="76" fill="#fff"/>
+  </g>
+  <text x="920" y="100" text-anchor="middle" font-size="22" font-weight="700" fill="#fff">AlcanciaInsegura</text>
+  <text x="920" y="122" text-anchor="middle" font-size="13" fill="#ffdad6">(sin encapsulamiento, solo para comparar)</text>
+  <g font-size="15" fill="#1b2a3a">
+    <text x="678" y="164">+ dinero: number</text>
+    <text x="678" y="210">+ guardar(cantidad: number): void</text>
+    <text x="678" y="238">+ sacar(cantidad: number): void</text>
+  </g>
+
+  <!-- ===== Notas ===== -->
+  <g stroke-dasharray="6 5" stroke="#7a6464" stroke-width="1.5" fill="none">
+    <line x1="320" y1="396" x2="320" y2="440"/>
+    <line x1="920" y1="258" x2="920" y2="300"/>
+  </g>
+  <g stroke="#c9a227" stroke-width="1.5" fill="#fff6d6">
+    <path d="M60 440 H560 L580 460 V556 H60 Z"/>
+    <path d="M660 300 H1160 L1180 320 V400 H660 Z"/>
+  </g>
+  <g font-size="13.5" fill="#3b2a2a">
+    <text x="76" y="466">Encapsulamiento: los miembros privados (-) se escriben</text>
+    <text x="76" y="486">con # en JavaScript: #dinero, #movimientos,</text>
+    <text x="76" y="506">#validar(), #registrar(). Solo se usan dentro de la clase.</text>
+    <text x="76" y="532">El exterior solo ve la interfaz pública (+): guardar, sacar,</text>
+    <text x="76" y="550">y los getters saldo / historial (solo lectura).</text>
+
+    <text x="676" y="326">Sin encapsulamiento: dinero es público, así que</text>
+    <text x="676" y="346">cualquiera puede hacer alcancia.dinero = -500</text>
+    <text x="676" y="366">o 1000000 y romper las reglas del objeto.</text>
+  </g>
+
+  <!-- ===== Leyenda ===== -->
+  <rect x="660" y="430" width="520" height="126" rx="6" fill="#f3f6f9" stroke="#1b3a5f" stroke-width="1.5"/>
+  <text x="676" y="456" font-family="'DejaVu Sans','Arial',sans-serif" font-size="15" font-weight="700" fill="#1b3a5f">Leyenda</text>
+  <g font-size="14" fill="#1b2a3a">
+    <text x="676" y="482"><tspan font-weight="700">+</tspan>  público → miembro normal</text>
+    <text x="676" y="504"><tspan font-weight="700">-</tspan>  privado → #campo, #metodo()</text>
+    <text x="676" y="526"><tspan font-weight="700">«get»</tspan>  accesor → get saldo() (solo lectura)</text>
+    <text x="676" y="548" font-size="12.5" fill="#5b6b7b">Compartimentos: nombre · atributos · métodos</text>
+  </g>
+</svg>
